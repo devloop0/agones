@@ -82,7 +82,7 @@ func main() {
 	}
 
 	// This will test the connection to agones on each readiness probe
-	// so if one of the allocator pod can't reach Kubernetes it will be removed
+	// so if one of the allocator pods can't reach Kubernetes it will be removed
 	// from the Kubernetes service.
 	health.AddReadinessCheck("allocator-agones-client", func() error {
 		_, err := agonesClient.ServerVersion()
